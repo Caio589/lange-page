@@ -12,7 +12,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -26,7 +26,7 @@ padding:20px;
 
 .container{
 background:white;
-max-width:520px;
+max-width:700px;
 width:100%;
 border-radius:15px;
 padding:25px;
@@ -54,22 +54,52 @@ padding:16px;
 border-radius:10px;
 text-decoration:none;
 margin:20px 0;
-transition:0.3s;
 }
 
-.botao:hover{
-transform:scale(1.05);
-}
-
-.ofertas{
+.titulo-categoria{
 margin-top:20px;
+font-weight:bold;
+font-size:18px;
+margin-bottom:10px;
+}
+
+.categorias{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+justify-content:center;
+margin-bottom:20px;
+}
+
+.cat{
+background:#eee;
+padding:10px 15px;
+border-radius:20px;
+font-size:14px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
 }
 
 .card{
 background:#f7f7f7;
 border-radius:10px;
 padding:15px;
-margin:10px 0;
+margin:12px 0;
+display:flex;
+gap:12px;
+align-items:center;
+}
+
+.card img{
+width:100px;
+height:100px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.info{
+text-align:left;
 }
 
 .produto{
@@ -83,7 +113,7 @@ color:#999;
 
 .preco-novo{
 color:red;
-font-size:20px;
+font-size:18px;
 font-weight:bold;
 }
 
@@ -133,27 +163,63 @@ Receba promoções com até <b>90% de desconto</b> todos os dias
 ENTRAR NO GRUPO AGORA
 </a>
 
-<div class="ofertas">
+<div class="titulo-categoria">
+Escolha sua categoria
+</div>
+
+<div class="categorias">
+
+<a class="cat" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">📱 Celulares</a>
+
+<a class="cat" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">💻 Eletrônicos</a>
+
+<a class="cat" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">🏠 Casa</a>
+
+<a class="cat" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">🔥 Promoções</a>
+
+</div>
 
 <div class="card">
+
+<img src="https://picsum.photos/200?random=1">
+
+<div class="info">
 <div class="produto">iPhone 13 128GB</div>
 <div class="preco-antigo">R$ 4.999</div>
 <div class="preco-novo">R$ 2.897 <span class="desconto">-42%</span></div>
 </div>
 
+</div>
+
 <div class="card">
-<div class="produto">Smart TV 50" 4K</div>
+
+<img src="https://picsum.photos/200?random=2">
+
+<div class="info">
+<div class="produto">Smart TV 50\" 4K</div>
 <div class="preco-antigo">R$ 3.200</div>
 <div class="preco-novo">R$ 1.799 <span class="desconto">-44%</span></div>
 </div>
 
+</div>
+
 <div class="card">
+
+<img src="https://picsum.photos/200?random=3">
+
+<div class="info">
 <div class="produto">Air Fryer Mondial</div>
 <div class="preco-antigo">R$ 499</div>
 <div class="preco-novo">R$ 199 <span class="desconto">-60%</span></div>
 </div>
 
+</div>
+
 <div class="card">
+
+<img src="https://picsum.photos/200?random=4">
+
+<div class="info">
 <div class="produto">Fone Bluetooth JBL</div>
 <div class="preco-antigo">R$ 299</div>
 <div class="preco-novo">R$ 89 <span class="desconto">-70%</span></div>
@@ -166,7 +232,7 @@ ENTRAR NO GRUPO AGORA
 ⚠️ Grupo quase cheio  
 ⏳ Redirecionando automaticamente em:
 
-<div id="contador">10</div>
+<div id="contador">30</div>
 
 </div>
 
@@ -180,19 +246,15 @@ QUERO ENTRAR NO GRUPO
 
 <script>
 
-let nomes = [
-"João","Carlos","Marcos","Ana","Pedro",
-"Lucas","Maria","Fernanda","Juliana","Bruno",
-"Rafael","Beatriz","Gabriel","Thiago"
-]
+let nomes=["João","Carlos","Marcos","Ana","Pedro","Lucas","Maria","Fernanda","Juliana"]
 
 function notificar(){
 
-let nome = nomes[Math.floor(Math.random()*nomes.length)]
+let nome=nomes[Math.floor(Math.random()*nomes.length)]
 
-let popup = document.getElementById("popup")
+let popup=document.getElementById("popup")
 
-popup.innerHTML = nome+" acabou de entrar no grupo"
+popup.innerHTML=nome+" acabou de entrar no grupo"
 
 popup.style.display="block"
 
@@ -204,15 +266,15 @@ popup.style.display="none"
 
 setInterval(notificar,5000)
 
-let tempo = 30
+let tempo=30
 
-let cont = setInterval(()=>{
+setInterval(()=>{
 
 tempo--
 
-document.getElementById("contador").innerHTML = tempo
+document.getElementById("contador").innerHTML=tempo
 
-if(tempo <=0){
+if(tempo<=0){
 
 window.location.href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli"
 
