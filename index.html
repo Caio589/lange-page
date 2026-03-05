@@ -60,6 +60,30 @@ margin:20px 0;
 transform:scale(1.05);
 }
 
+.categorias{
+margin-top:10px;
+}
+
+.categorias a{
+display:inline-block;
+background:#eee;
+padding:8px 14px;
+border-radius:20px;
+margin:5px;
+font-size:14px;
+text-decoration:none;
+color:#333;
+font-weight:bold;
+}
+
+.status{
+background:#f7f7f7;
+padding:10px;
+border-radius:10px;
+margin:15px 0;
+font-size:14px;
+}
+
 .ofertas{
 margin-top:20px;
 }
@@ -103,21 +127,6 @@ color:#c40000;
 font-weight:bold;
 }
 
-.roleta{
-margin-top:20px;
-}
-
-#spin{
-background:#ff4d4d;
-color:white;
-border:none;
-padding:12px;
-border-radius:8px;
-font-weight:bold;
-cursor:pointer;
-margin-top:10px;
-}
-
 .popup{
 position:fixed;
 bottom:20px;
@@ -143,18 +152,24 @@ display:none;
 Receba ofertas com até <b>90% de desconto</b> todos os dias
 </p>
 
-<a class="botao" href="SEU_LINK_DO_GRUPO">
+<a class="botao" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">
 ENTRAR NO GRUPO
 </a>
 
-<div class="roleta">
+<b>Escolha sua categoria</b>
 
-<h3>🎡 Gire a roleta de desconto</h3>
+<div class="categorias">
+<a href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">📱 Celulares</a>
+<a href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">💻 Eletrônicos</a>
+<a href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">🏠 Casa</a>
+<a href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">🎮 Games</a>
+<a href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">👕 Moda</a>
+<a href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">🔥 Promoções</a>
+</div>
 
-<button id="spin">GIRAR</button>
-
-<p id="resultado"></p>
-
+<div class="status">
+👥 <span id="online"></span> pessoas vendo agora<br>
+⚡ Restam apenas <span id="vagas"></span> vagas no grupo
 </div>
 
 <div class="ofertas">
@@ -188,7 +203,7 @@ ENTRAR NO GRUPO
 
 </div>
 
-<a class="botao" href="SEU_LINK_DO_GRUPO">
+<a class="botao" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">
 QUERO ENTRAR NO GRUPO
 </a>
 
@@ -221,24 +236,15 @@ popup.style.display="none"
 
 setInterval(notificar,5000)
 
-document.getElementById("spin").onclick = function(){
+let online = Math.floor(Math.random()*40)+20
+document.getElementById("online").innerHTML = online
 
-let premios = [
-"Você ganhou 50% OFF",
-"Você ganhou 70% OFF",
-"Você ganhou 30% OFF",
-"Você ganhou 90% OFF"
-]
+let vagas = Math.floor(Math.random()*30)+5
+document.getElementById("vagas").innerHTML = vagas
 
-let premio = premios[Math.floor(Math.random()*premios.length)]
+let tempo = 10
 
-document.getElementById("resultado").innerHTML=premio
-
-}
-
-let tempo = 30
-
-let cont = setInterval(()=>{
+setInterval(()=>{
 
 tempo--
 
@@ -246,7 +252,7 @@ document.getElementById("contador").innerHTML = tempo
 
 if(tempo <=0){
 
-window.location.href="SEU_LINK_DO_GRUPO"
+window.location.href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli"
 
 }
 
