@@ -8,103 +8,145 @@
 
 <style>
 
-body{
-font-family:Arial;
-background:linear-gradient(135deg,#ff3c3c,#ff9f00);
+*{
 margin:0;
-padding:20px;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff3c3c,#ff9f00);
+min-height:100vh;
 display:flex;
 justify-content:center;
+align-items:center;
+padding:20px;
 }
 
 .container{
 background:white;
 max-width:700px;
 width:100%;
-padding:25px;
 border-radius:15px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
+padding:25px;
 text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 h1{
+font-size:28px;
 margin-bottom:10px;
 }
 
 .sub{
-color:#666;
+color:#555;
+margin-bottom:20px;
 }
 
 .botao{
 display:block;
 background:#25D366;
 color:white;
-padding:15px;
-margin:20px 0;
-border-radius:10px;
 font-size:20px;
-text-decoration:none;
 font-weight:bold;
+padding:16px;
+border-radius:10px;
+text-decoration:none;
+margin:20px 0;
+}
+
+.titulo-categoria{
+margin-top:20px;
+font-weight:bold;
+font-size:18px;
+margin-bottom:10px;
 }
 
 .categorias{
-margin:20px 0;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+justify-content:center;
+margin-bottom:20px;
 }
 
-.categorias a{
+.cat{
 background:#eee;
 padding:10px 15px;
 border-radius:20px;
-margin:5px;
-display:inline-block;
+font-size:14px;
 text-decoration:none;
 color:#333;
 font-weight:bold;
 }
 
 .card{
-display:flex;
-align-items:center;
 background:#f7f7f7;
-padding:12px;
 border-radius:10px;
+padding:15px;
 margin:12px 0;
+display:flex;
+gap:12px;
+align-items:center;
 }
 
 .card img{
-width:90px;
-height:90px;
-border-radius:8px;
+width:100px;
+height:100px;
 object-fit:cover;
-margin-right:10px;
+border-radius:8px;
+}
+
+.info{
+text-align:left;
 }
 
 .produto{
 font-weight:bold;
 }
 
-.antigo{
+.preco-antigo{
 text-decoration:line-through;
-color:#888;
+color:#999;
 }
 
-.novo{
+.preco-novo{
 color:red;
-font-weight:bold;
 font-size:18px;
+font-weight:bold;
+}
+
+.desconto{
+background:red;
+color:white;
+padding:3px 7px;
+border-radius:5px;
+font-size:12px;
 }
 
 .urgencia{
 background:#ffeaea;
-padding:10px;
-margin-top:20px;
+padding:12px;
 border-radius:10px;
-font-weight:bold;
+margin-top:15px;
 color:#c40000;
+font-weight:bold;
+}
+
+.popup{
+position:fixed;
+bottom:20px;
+left:20px;
+background:white;
+padding:10px 15px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+font-size:14px;
+display:none;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -121,101 +163,108 @@ Receba promoções com até <b>90% de desconto</b> todos os dias
 ENTRAR NO GRUPO AGORA
 </a>
 
-<h3>Escolha sua categoria</h3>
+<div class="titulo-categoria">
+Escolha sua categoria
+</div>
 
 <div class="categorias">
 
-<a href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">📱 Celulares</a>
+<a class="cat" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">📱 Celulares</a>
 
-<a href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">💻 Eletrônicos</a>
+<a class="cat" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">💻 Eletrônicos</a>
 
-<a href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">🏠 Casa</a>
+<a class="cat" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">🏠 Casa</a>
 
-<a href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">🔥 Promoções</a>
+<a class="cat" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">🔥 Promoções</a>
 
 </div>
 
-
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1605236453806-6ff36851218e">
+<img src="https://picsum.photos/200?random=1">
 
-<div>
-
+<div class="info">
 <div class="produto">iPhone 13 128GB</div>
-
-<div class="antigo">R$ 4.999</div>
-
-<div class="novo">R$ 2.897</div>
-
+<div class="preco-antigo">R$ 4.999</div>
+<div class="preco-novo">R$ 2.897 <span class="desconto">-42%</span></div>
 </div>
 
 </div>
-
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1593784991095-a205069470b6">
+<img src="https://picsum.photos/200?random=2">
 
-<div>
-
-<div class="produto">Smart TV 50'' 4K</div>
-
-<div class="antigo">R$ 3.200</div>
-
-<div class="novo">R$ 1.799</div>
-
+<div class="info">
+<div class="produto">Smart TV 50\" 4K</div>
+<div class="preco-antigo">R$ 3.200</div>
+<div class="preco-novo">R$ 1.799 <span class="desconto">-44%</span></div>
 </div>
 
 </div>
-
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c">
+<img src="https://picsum.photos/200?random=3">
 
-<div>
-
-<div class="produto">Air Fryer</div>
-
-<div class="antigo">R$ 499</div>
-
-<div class="novo">R$ 199</div>
-
+<div class="info">
+<div class="produto">Air Fryer Mondial</div>
+<div class="preco-antigo">R$ 499</div>
+<div class="preco-novo">R$ 199 <span class="desconto">-60%</span></div>
 </div>
 
 </div>
-
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1585386959984-a415522316f2">
+<img src="https://picsum.photos/200?random=4">
 
-<div>
-
-<div class="produto">Fone Bluetooth</div>
-
-<div class="antigo">R$ 299</div>
-
-<div class="novo">R$ 89</div>
-
+<div class="info">
+<div class="produto">Fone Bluetooth JBL</div>
+<div class="preco-antigo">R$ 299</div>
+<div class="preco-novo">R$ 89 <span class="desconto">-70%</span></div>
 </div>
 
 </div>
-
 
 <div class="urgencia">
 
+⚠️ Grupo quase cheio  
 ⏳ Redirecionando automaticamente em:
 
 <div id="contador">30</div>
 
 </div>
 
+<a class="botao" href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1tcli">
+QUERO ENTRAR NO GRUPO
+</a>
+
 </div>
 
+<div class="popup" id="popup"></div>
 
 <script>
+
+let nomes=["João","Carlos","Marcos","Ana","Pedro","Lucas","Maria","Fernanda","Juliana"]
+
+function notificar(){
+
+let nome=nomes[Math.floor(Math.random()*nomes.length)]
+
+let popup=document.getElementById("popup")
+
+popup.innerHTML=nome+" acabou de entrar no grupo"
+
+popup.style.display="block"
+
+setTimeout(()=>{
+popup.style.display="none"
+},3000)
+
+}
+
+setInterval(notificar,5000)
 
 let tempo=30
 
@@ -234,7 +283,6 @@ window.location.href="https://chat.whatsapp.com/E82Ua32pyjs11oOWMrV6bL?mode=hq1t
 },1000)
 
 </script>
-
 
 </body>
 </html>
